@@ -1,10 +1,10 @@
 # MyFirstWebsite
 
->> create virtualn enviroment,
->> run virtual enviroment (Windows): '"name_of_our_virtenv"\Scripts activate'
->> install python,
->> install django,
->> runn server: python manage.py runserver
+- create virtualn enviroment,
+- run virtual enviroment (Windows): '"name_of_our_virtenv"\Scripts activate'
+- install python,
+- install django,
+- runn server: python manage.py runserver
 
 Section "Home":
 - shows image,
