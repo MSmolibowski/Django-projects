@@ -1,10 +1,10 @@
 # MyFirstWebsite
 
-> create virtualn enviroment,
-> run virtual enviroment (Windows): '"name_of_our_virtenv"\Scripts activate'
-> install python,
-> install django,
-> runn server: python manage.py runserver
+>> create virtualn enviroment,
+>> run virtual enviroment (Windows): '"name_of_our_virtenv"\Scripts activate'
+>> install python,
+>> install django,
+>> runn server: python manage.py runserver
 
 Section "Home":
 - shows image,
@@ -22,7 +22,7 @@ Section Blog:
 - posts can be viewd by group,
 
 Section Tools:
-  > SeqContent
+  >> SeqContent
   - put sequence and set word size,
   - code will create words with size you set, and will check te percentage of each word in sequence,
     example: 
@@ -34,7 +34,7 @@ Section Tools:
   Count: 	1 	 1    	1 	 2 	   4   	 1    	1   	1    	1   	1    	1    	1    	1    	1    	1
   '%'  5.26% 5.26% 5.26% 10.53% 21.05% 5.26% 5.26% 5.26% 5.26% 5.26% 5.26% 5.26% 5.26% 5.26% 5.26% 
 
-  >Transcript:
+  >>Transcript:
   - put sequence and find complementary sequence,
   (It is not transcription to RNA, so A:T, T:A!)
 
