@@ -1,0 +1,47 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block page_title %}Blog{% endblock %}
+{% block nav-link-blog %}active{% endblock %}
+
+{% block page_level_css %}
+{% endblock %}
+
+{% block content %}
+  
+   <div class="row">
+    <!-- begin::Post -->
+    <div class="col-9 mt-5">
+      <h1>{{ object.title }}</h1>
+      <p class="lead">
+        by
+        <a href="{% url 'blog:post_list_author' object.author.id %}">{{ object.author.name }}</a>
+      </p>
+      <hr>
+      <!-- begin::Post date -->
+      <p>
+        <i class="fa fa-clock-o" aria-hidden="true"></i> Published on {{ object.date_publish }} ({{ object.date_publish|timesince }} ago).<br>
+        <i class="fa fa-star-o" aria-hidden="true"></i> Category: <a href="{% url 'blog:post_list_category' object.id %}">{{ object.category.name }}</a>
+      </p>
+      <!-- end::Post date -->
+      <hr>
+      <!-- begin::Post body -->
+      <div class="md2html">{{ object.body }}</div>
+      <!-- end::Post body -->
+      <hr>
+    </div>
+    <!-- end::Post -->
+
+    <!-- begin::Sidebar -->
+    <div class="col-3">
+      {% include 'blog/includes/category_widget.html' with category_name=True category_list=category_list %}
+    </div>
+    <!-- end::Sidebar -->
+  </div>
+{% endblock %}
+
+
+{% block page_level_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script src="{% static 'blog/js/md2html.js' %}"></script>
+{% endblock %}

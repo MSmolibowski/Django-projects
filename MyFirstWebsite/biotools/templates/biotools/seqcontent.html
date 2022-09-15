@@ -1,0 +1,49 @@
+{% extends 'myapp/base.html' %}
+
+{% block page_title %}Tools{% endblock %}
+{% block nav-link-tools %}active{% endblock %}
+{% block nav-item-seqcontent %}active{% endblock %}
+
+{% block page_level_css %}
+<style>
+    ul.errorlist li {
+        color: red;
+    }
+    table, th, td {
+  border:1px solid black;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+    
+    <h1 class="mt-5">Tools <small>Seqcontent</small></h1>
+    
+    {% if results %}
+        <h3>Results</h3>
+
+        <table>
+
+                <tr>
+  
+                        <th colspan="index_to_show"> Seq length : {{ length }}nt </th>
+                       <tr> <th > Word </th> {% for word in results.words %} <td> {{ word }} </td> {% endfor %} </tr> 
+                       <tr> <th > Count </th> {% for count in results.counts %} <td> {{ count }} </td> {% endfor %} </tr>
+                      <tr> <th > Percent </th>  {% for percent in results.percent %} <td> {{ percent }}% </td> {% endfor %} </tr>
+                </tr> 
+                            
+           
+        </table>
+    {% else %}
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-primary" type="submit">Calculate</button>
+        </form>
+
+    {% endif %}
+
+
+{% endblock %}
+
